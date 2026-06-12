@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubaydulloh Nasrullayev — Personal Space</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-base: #0a0a0c;
+      --card-black: #000000;
+      --card-border: rgba(255, 255, 255, 0.05);
+      --text-white: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.5);
+      --font-stack: 'Inter', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #030304;
+      color: var(--text-white);
+      font-family: var(--font-stack);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+
+    /* ===== MAIN CONTAINER ===== */
+    .app-container {
+      width: 100%;
+      max-width: 480px;
+      background-color: var(--bg-base);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* ===== HERO SECTION (TO'Q FONLI PREMIUM RASM) ===== */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: url('photo_2026-06-12_09-33-20.jpg') center top/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px 28px;
+    }
+
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 12, 0) 0%,
+        rgba(10, 10, 12, 0.3) 40%,
+        rgba(10, 10, 12, 0.8) 75%,
+        var(--bg-base) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-name {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      color: var(--text-white);
+      margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 18px;
+    }
+
+    .hero-social-link {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .hero-social-link:hover {
+      color: var(--text-white);
+      transform: scale(1.1);
+    }
+
+    /* ===== ASOSIY KONTENT REYESTRI ===== */
+    .links-section {
+      position: relative;
+      z-index: 2;
+      padding: 15px 24px 30px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background-color: var(--bg-base);
+    }
+
+    /* ===== YANGI PREDIAL PORTFOLIO / MORE TUGMASI (KARTОCHKA USLUBIDA) ===== */
+    .portfolio-card-btn {
+      display: flex;
+      align-items: center;
+      background-color: var(--card-black);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 20px;
+      text-decoration: none;
+      color: var(--text-white);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .portfolio-card-btn:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .portfolio-icon-box {
+      width: 48px;
+      height: 48px;
+      background-color: #16161a;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+    }
+
+    .portfolio-icon-box i {
+      font-size: 1.25rem;
+      color: #ffffff;
+    }
+
+    .portfolio-text-box {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .portfolio-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .portfolio-main-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    .portfolio-arrow {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.3);
+      margin-left: 10px;
+    }
+
+    /* ===== ASOSIY ODDIY TUGMALAR ===== */
+    .premium-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--card-black);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px 24px;
+      text-decoration: none;
+      color: var(--text-white);
+      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-left i {
+      font-size: 1.15rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .btn-text {
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-more-icon {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .premium-btn:hover {
+      background-color: #050506;
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    /* ===== BOG'LANISH BLOCKI ===== */
+    .bottom-contact-card {
+      background-color: #000000;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 22px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .contact-icon-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .contact-icon-btn:hover {
+      background-color: var(--text-white);
+      color: #000000;
+      border-color: var(--text-white);
+      transform: translateY(-3px);
+    }
+
+    /* ===== REKLAMASIZ MUSTAQIL FOOTER ===== */
+    .app-footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.25);
+      padding: 20px 0 30px 0;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 480px) {
+      .hero-section { height: 480px; padding: 30px 20px; }
+      .hero-name { font-size: 2.3rem; }
+      .links-section { padding: 10px 16px 20px 16px; }
+      .portfolio-card-btn { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-name">Ubaydulloh Nasrullayev</h1>
+      <p class="hero-sub">Intizom va rivojlanish jarayonida. 42 km marafon sari yo‘l.</p>
+      
+      <div class="hero-socials">
+        <a href="#" class="hero-social-link" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hero-social-link" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" class="hero-social-link" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <main class="links-section">
+    
+    <a href="#" class="portfolio-card-btn" target="_blank" rel="noopener noreferrer">
+      <div class="portfolio-icon-box">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+      <div class="portfolio-text-box">
+        <span class="portfolio-tag">Portfolio</span>
+        <h3 class="portfolio-main-title">Ko‘proq loyihalar </h3>
+        <p class="portfolio-desc">IT ishlanmalar, Telegram loyihalar va shaxsiy natijalar arxivi.</p>
+      </div>
+      <i class="fa-solid fa-chevron-right portfolio-arrow"></i>
+    </a>
+
+    <a href="#" class="premium-btn" target="_blank" rel="noopener noreferrer">
+      <div class="btn-left">
+        <i class="fa-brands fa-instagram"></i>
+        <span class="btn-text">Instagram</span>
+      </div>
+      <i class="fa-solid fa-ellipsis-vertical btn-more-icon"></i>
+    </a>
+
+    <a href="#" class="premium-btn" target="_blank" rel="noopener noreferrer">
+      <div class="btn-left">
+        <i class="fa-brands fa-telegram"></i>
+        <span class="btn-text">Telegram Kanal</span>
+      </div>
+      <i class="fa-solid fa-ellipsis-vertical btn-more-icon"></i>
+    </a>
+
+    <a href="#" class="premium-btn" target="_blank" rel="noopener noreferrer">
+      <div class="btn-left">
+        <i class="fa-brands fa-github"></i>
+        <span class="btn-text">GitHub Sourse</span>
+      </div>
+      <i class="fa-solid fa-ellipsis-vertical btn-more-icon"></i>
+    </a>
+
+    <a href="#" class="premium-btn" target="_blank" rel="noopener noreferrer">
+      <div class="btn-left">
+        <i class="fa-brands fa-linkedin-in"></i>
+        <span class="btn-text">LinkedIn Profile</span>
+      </div>
+      <i class="fa-solid fa-ellipsis-vertical btn-more-icon"></i>
+    </a>
+
+    <section class="bottom-contact-card">
+      <h2 class="contact-title">Bog‘lanish</h2>
+      <p class="contact-desc">G‘oya yoki takliflar bo‘lsa, to‘g‘ridan-to‘g‘ri aloqaga chiqing</p>
+      
+      <div class="contact-row">
+        <a href="tel:+998901234567" class="contact-icon-btn" title="Telefon qilish">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://t.me/username" class="contact-icon-btn" target="_blank" title="Telegram shaxsiy">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="mailto:example@gmail.com" class="contact-icon-btn" title="Email yuborish">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>© 2026 Space • Huquqlar himoyalangan</p>
+    </footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>
